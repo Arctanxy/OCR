@@ -4,8 +4,11 @@ from PIL import Image
 from torch.utils.data import DataLoader, Dataset
 from sklearn.model_selection import train_test_split
 import os
+import cv2
+import numpy as np 
 
-class OCRData(Dataset):
+
+class TianChiData(Dataset):
     def __init__(self, subset="train"):
         self.img_list = sorted(glob("train/*jpg"),key = lambda x:int(os.path.basename(x).split(".")[0])
         ) + \
@@ -46,6 +49,7 @@ class OCRData(Dataset):
 
     def __getitem__(self, index):
         image = Image.open(self.img_list[index])
+        # image = cv2.imread(self.img_list[index])
         label = self.label_list[index]
         return image, label
 
@@ -53,19 +57,27 @@ class OCRData(Dataset):
         return len(self.label_list)
 
 
+
 if __name__ == "__main__":
     from PIL import ImageDraw
-    data = OCRData()
+    from image import rotate_cut_img
+    data = TianChiData()
     for i, (img, label) in enumerate(data):
-        draw = ImageDraw.Draw(img)
+        # draw = ImageDraw.Draw(img)
         for j, box in enumerate(label["boxes"]):
-            draw.polygon(box, outline="red")            
+            # draw.polygon(box, outline="red")            
             print(label["texts"][j])
-            print(label["orient"])
+            print(box)
+            partImg,box = rotate_cut_img(img,box)
+            partImg.show()
+            # imgOut = data.cut_text_sub(img, box)
+            # print(imgOut.shape)
+            # cv2.imshow("imgout", imgOut)
+            # cv2.waitKey(500)
             if j > 4:
                 break
-        img.show()
+        # img.show()
         break
 
         
-
+# 文本截取代码参考https://github.com/chineseocr/chineseocr/blob/app/apphelper/image.py
