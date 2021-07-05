@@ -1,11 +1,12 @@
 from glob import glob 
 import pandas as pd 
-from PIL import Image
+from PIL import Image, ImageDraw
 from torch.utils.data import DataLoader, Dataset
 from sklearn.model_selection import train_test_split
 import os
 import cv2
 import numpy as np 
+from tqdm import tqdm
 
 
 class TianChiData(Dataset):
@@ -56,28 +57,63 @@ class TianChiData(Dataset):
     def __len__(self):
         return len(self.label_list)
 
+    
+# 统计一下方向类别
+def directions(data):
+    from collections import defaultdict
+    from tqdm import tqdm
+    count = defaultdict(int)
+    for i, (img, label) in tqdm(enumerate(data),total=len(data)):
+        direction = label["orient"]["option"]
+        count[direction] += 1
+    print(count)
+    # {'底部朝下': 11049, '底部朝左': 492, '底部朝右': 309, '底部朝上': 22}
+    
 
 
 if __name__ == "__main__":
-    from PIL import ImageDraw
+    import sys
     from image import rotate_cut_img
+    st = int(sys.argv[1])
+    ed = int(sys.argv[2])  # max 11872
+    if not os.path.exists("./rec_img"):
+        os.makedirs("./rec_img")
     data = TianChiData()
-    for i, (img, label) in enumerate(data):
-        # draw = ImageDraw.Draw(img)
-        for j, box in enumerate(label["boxes"]):
-            # draw.polygon(box, outline="red")            
-            print(label["texts"][j])
-            print(box)
-            partImg,box = rotate_cut_img(img,box)
-            partImg.show()
-            # imgOut = data.cut_text_sub(img, box)
-            # print(imgOut.shape)
-            # cv2.imshow("imgout", imgOut)
-            # cv2.waitKey(500)
-            if j > 4:
-                break
-        # img.show()
-        break
+    # directions(data)
+    # exit(1)
+    f = open("rec_label.txt", 'w', encoding="utf-8")
+    idx = 0
+    for i, (img, label) in tqdm(enumerate(data), total = len(data)):
+        if i < st or i >= ed:
+            continue
+        width, height = img.size
+        if label["orient"]["option"] == "底部朝左":
+            img = img.transpose(Image.ROTATE_90)
+        elif label["orient"]["option"] == "底部朝右":
+            img = img.transpose(Image.ROTATE_270)
+        elif label["orient"]["option"] == "底部朝上":
+            img = img.transpose(Image.ROTATE_180)
 
+        for j, box in enumerate(label["boxes"]):
+            if label["orient"]["option"] == "底部朝左":
+                # [x1, y1], [x2, y2], [x3, y3], [x4, y4]
+                # [1, 2], [3, 4], [5, 6], [7, 8]
+                # --> [y1, width - x], 
+                box = [box[1], width - box[0], box[3], width - box[2], box[5], width - box[4], box[7], width - box[6]]
+            elif label["orient"]["option"] == "底部朝右":
+                box = [height - box[1], box[0], height - box[3], box[2], height - box[5], box[4], height - box[7], box[6]]
+            elif label["orient"]["option"] == "底部朝上":
+                box = [width - box[0], height - box[1], width - box[2], height - box[3], width - box[4], height - box[5], width - box[6], height - box[7]]
+                print("index ", idx)
+            try:
+                partImg,box = rotate_cut_img(img,box)
+                partImg.save(f"rec_img/{idx}.jpg")
+                f.write(str(idx) + "\t" + label["texts"][j] + "\n")
+            except:
+                pass
+            idx += 1
         
 # 文本截取代码参考https://github.com/chineseocr/chineseocr/blob/app/apphelper/image.py
+# todo：先旋转image和box，再截图
+# 参考 https://blog.csdn.net/fanzonghao/article/details/86609090
+# 详见utils.py

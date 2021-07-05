@@ -49,8 +49,11 @@ def solve(box):
      #y = cy-h/2
      
      sinA = (h*(x1-cx)-w*(y1 -cy))*1.0/(h*h+w*w)*2
+    #  sinA = (sinA * 100).round() / 100
      if abs(sinA)>1:
-            angle = None
+        print(f"sinA is {sinA}\nbox is {box[:8]}")
+        angle = None
+        # angle = np.arcsin(1)
      else:
         angle = np.arcsin(sinA)
      return angle,w,h,cx,cy
