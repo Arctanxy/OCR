@@ -1,0 +1,34 @@
+Thu, 29 Jul 2021 00:20:30 main.py[line:119] INFO Namespace(augmentation='mixup', balanced='balanced', batch_size=32, cuda=False, data_type='full_train', early_stop=1000000, filename='E:\\workspace\\classify\\audioset_tagging_cnn-master\\audioset_tagging_cnn-master\\pytorch\\main', fmax=14000, fmin=50, hop_size=320, learning_rate=0.001, loss_type='clip_bce', mel_bins=64, mode='train', model_type='Cnn14', resume_iteration=0, sample_rate=16000, window_size=1024, workspace='your_workspace')
+Thu, 29 Jul 2021 00:20:30 main.py[line:125] INFO Using CPU. Set --cuda flag to use GPU.
+Thu, 29 Jul 2021 00:20:30 main.py[line:136] INFO Parameters num: 79878692
+Thu, 29 Jul 2021 00:22:06 main.py[line:238] INFO Validate test mAP: nan
+Thu, 29 Jul 2021 00:22:06 utilities.py[line:159] INFO     Dump statistics to E:\workspace\classify\audioset_tagging_cnn-master\audioset_tagging_cnn-master\statistics_path\statistics.pkl
+Thu, 29 Jul 2021 00:22:06 utilities.py[line:160] INFO     Dump statistics to E:\workspace\classify\audioset_tagging_cnn-master\audioset_tagging_cnn-master\statistics_path\statistics_2021-07-29_00-20-31.pkl
+Thu, 29 Jul 2021 00:22:06 main.py[line:249] INFO iteration: 0, train time: 31.060 s, validate time: 64.307 s
+Thu, 29 Jul 2021 00:22:06 main.py[line:251] INFO ------------------------------------
+Thu, 29 Jul 2021 00:22:06 main.py[line:266] INFO Model saved to E:\workspace\classify\audioset_tagging_cnn-master\audioset_tagging_cnn-master\checkpoints\0_iterations.pth
+Thu, 29 Jul 2021 01:40:52 main.py[line:238] INFO Validate test mAP: nan
+Thu, 29 Jul 2021 01:40:52 utilities.py[line:159] INFO     Dump statistics to E:\workspace\classify\audioset_tagging_cnn-master\audioset_tagging_cnn-master\statistics_path\statistics.pkl
+Thu, 29 Jul 2021 01:40:52 utilities.py[line:160] INFO     Dump statistics to E:\workspace\classify\audioset_tagging_cnn-master\audioset_tagging_cnn-master\statistics_path\statistics_2021-07-29_00-20-31.pkl
+Thu, 29 Jul 2021 01:40:52 main.py[line:249] INFO iteration: 2000, train time: 4657.341 s, validate time: 68.407 s
+Thu, 29 Jul 2021 01:40:52 main.py[line:251] INFO ------------------------------------
+Thu, 29 Jul 2021 03:00:46 main.py[line:238] INFO Validate test mAP: nan
+Thu, 29 Jul 2021 03:00:46 utilities.py[line:159] INFO     Dump statistics to E:\workspace\classify\audioset_tagging_cnn-master\audioset_tagging_cnn-master\statistics_path\statistics.pkl
+Thu, 29 Jul 2021 03:00:46 utilities.py[line:160] INFO     Dump statistics to E:\workspace\classify\audioset_tagging_cnn-master\audioset_tagging_cnn-master\statistics_path\statistics_2021-07-29_00-20-31.pkl
+Thu, 29 Jul 2021 03:00:46 main.py[line:249] INFO iteration: 4000, train time: 4724.746 s, validate time: 69.409 s
+Thu, 29 Jul 2021 03:00:46 main.py[line:251] INFO ------------------------------------
+Thu, 29 Jul 2021 04:16:50 main.py[line:238] INFO Validate test mAP: nan
+Thu, 29 Jul 2021 04:16:50 utilities.py[line:159] INFO     Dump statistics to E:\workspace\classify\audioset_tagging_cnn-master\audioset_tagging_cnn-master\statistics_path\statistics.pkl
+Thu, 29 Jul 2021 04:16:50 utilities.py[line:160] INFO     Dump statistics to E:\workspace\classify\audioset_tagging_cnn-master\audioset_tagging_cnn-master\statistics_path\statistics_2021-07-29_00-20-31.pkl
+Thu, 29 Jul 2021 04:16:50 main.py[line:249] INFO iteration: 6000, train time: 4495.928 s, validate time: 68.447 s
+Thu, 29 Jul 2021 04:16:50 main.py[line:251] INFO ------------------------------------
+Thu, 29 Jul 2021 05:33:36 main.py[line:238] INFO Validate test mAP: nan
+Thu, 29 Jul 2021 05:33:36 utilities.py[line:159] INFO     Dump statistics to E:\workspace\classify\audioset_tagging_cnn-master\audioset_tagging_cnn-master\statistics_path\statistics.pkl
+Thu, 29 Jul 2021 05:33:36 utilities.py[line:160] INFO     Dump statistics to E:\workspace\classify\audioset_tagging_cnn-master\audioset_tagging_cnn-master\statistics_path\statistics_2021-07-29_00-20-31.pkl
+Thu, 29 Jul 2021 05:33:36 main.py[line:249] INFO iteration: 8000, train time: 4538.290 s, validate time: 67.462 s
+Thu, 29 Jul 2021 05:33:36 main.py[line:251] INFO ------------------------------------
+Thu, 29 Jul 2021 06:51:59 main.py[line:238] INFO Validate test mAP: nan
+Thu, 29 Jul 2021 06:51:59 utilities.py[line:159] INFO     Dump statistics to E:\workspace\classify\audioset_tagging_cnn-master\audioset_tagging_cnn-master\statistics_path\statistics.pkl
+Thu, 29 Jul 2021 06:51:59 utilities.py[line:160] INFO     Dump statistics to E:\workspace\classify\audioset_tagging_cnn-master\audioset_tagging_cnn-master\statistics_path\statistics_2021-07-29_00-20-31.pkl
+Thu, 29 Jul 2021 06:51:59 main.py[line:249] INFO iteration: 10000, train time: 4634.122 s, validate time: 69.109 s
+Thu, 29 Jul 2021 06:51:59 main.py[line:251] INFO ------------------------------------

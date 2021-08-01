@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d8ec5a4d-9ea7-4bee-9bb3-e062ea762e59" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1vttwR6yQG0Ce14bgkNhDmHkV4k" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="data_generator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="audioset_tagging_cnn-master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/data_generator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="inference" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="audioset_tagging_cnn-master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pytorch" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pytorch/inference.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="audioset_tagging_cnn-master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pytorch/main.py" />
+      <option name="PARAMETERS" value="train --workspace=&quot;your_workspace&quot; --window_size=1024 --hop_size=320 --mel_bins=64 --fmin=50 --fmax=14000 --model_type=Cnn14 --loss_type=clip_bce  --balanced=balanced --augmentation=mixup --batch_size=32 --learning_rate=1e-3 --resume_iteration=0 --early_stop=1000000" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.inference" />
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.data_generator" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.data_generator" />
+        <item itemvalue="Python.inference" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d8ec5a4d-9ea7-4bee-9bb3-e062ea762e59" name="Default Changelist" comment="" />
+      <created>1627393450016</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1627393450016</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="309" y="116" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1627400831582">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="309" y="116" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1707.920@0.0.1707.920" timestamp="1627400831582" />
+    <state x="634" y="216" key="FileChooserDialogImpl" timestamp="1627397702576">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="634" y="216" key="FileChooserDialogImpl/0.0.1707.920@0.0.1707.920" timestamp="1627397702576" />
+    <state width="1685" height="242" key="GridCell.Tab.0.bottom" timestamp="1627488488444">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state width="1685" height="242" key="GridCell.Tab.0.bottom/0.0.1707.920@0.0.1707.920" timestamp="1627488488444" />
+    <state width="1685" height="242" key="GridCell.Tab.0.center" timestamp="1627488488443">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state width="1685" height="242" key="GridCell.Tab.0.center/0.0.1707.920@0.0.1707.920" timestamp="1627488488443" />
+    <state width="1685" height="242" key="GridCell.Tab.0.left" timestamp="1627488488443">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state width="1685" height="242" key="GridCell.Tab.0.left/0.0.1707.920@0.0.1707.920" timestamp="1627488488443" />
+    <state width="1685" height="242" key="GridCell.Tab.0.right" timestamp="1627488488443">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state width="1685" height="242" key="GridCell.Tab.0.right/0.0.1707.920@0.0.1707.920" timestamp="1627488488443" />
+    <state width="1685" height="343" key="GridCell.Tab.1.bottom" timestamp="1627488357834">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state width="1685" height="343" key="GridCell.Tab.1.bottom/0.0.1707.920@0.0.1707.920" timestamp="1627488357834" />
+    <state width="1685" height="343" key="GridCell.Tab.1.center" timestamp="1627488357833">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state width="1685" height="343" key="GridCell.Tab.1.center/0.0.1707.920@0.0.1707.920" timestamp="1627488357833" />
+    <state width="1685" height="343" key="GridCell.Tab.1.left" timestamp="1627488357833">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state width="1685" height="343" key="GridCell.Tab.1.left/0.0.1707.920@0.0.1707.920" timestamp="1627488357833" />
+    <state width="1685" height="343" key="GridCell.Tab.1.right" timestamp="1627488357833">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state width="1685" height="343" key="GridCell.Tab.1.right/0.0.1707.920@0.0.1707.920" timestamp="1627488357833" />
+    <state x="355" y="103" key="SettingsEditor" timestamp="1627397657972">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="355" y="103" key="SettingsEditor/0.0.1707.920@0.0.1707.920" timestamp="1627397657972" />
+    <state x="534" y="60" width="638" height="801" key="find.popup" timestamp="1627487686029">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="534" y="60" width="638" height="801" key="find.popup/0.0.1707.920@0.0.1707.920" timestamp="1627487686029" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytorch/inference.py</url>
+          <line>200</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytorch/inference.py</url>
+          <line>203</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/utils/data_generator.py</url>
+          <line>142</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/Anaconda3/Lib/site-packages/torch/nn/functional.py</url>
+          <line>2525</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytorch/main.py</url>
+          <line>278</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="batch_data_dict[key]" language="Python" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

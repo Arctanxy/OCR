@@ -1,0 +1,9 @@
+Wed, 28 Jul 2021 23:13:27 main.py[line:118] INFO Namespace(augmentation='mixup', balanced='balanced', batch_size=32, cuda=True, data_type='full_train', early_stop=1000000, filename='E:\\workspace\\classify\\audioset_tagging_cnn-master\\audioset_tagging_cnn-master\\pytorch\\main', fmax=14000, fmin=50, hop_size=320, learning_rate=0.001, loss_type='clip_bce', mel_bins=64, mode='train', model_type='Cnn14', resume_iteration=0, sample_rate=16000, window_size=1024, workspace='your_workspace')
+Wed, 28 Jul 2021 23:13:27 main.py[line:121] INFO Using GPU.
+Wed, 28 Jul 2021 23:13:28 main.py[line:135] INFO Parameters num: 79878692
+Wed, 28 Jul 2021 23:14:17 main.py[line:237] INFO Validate test mAP: nan
+Wed, 28 Jul 2021 23:14:17 utilities.py[line:159] INFO     Dump statistics to E:\workspace\classify\audioset_tagging_cnn-master\audioset_tagging_cnn-master\statistics_path\statistics.pkl
+Wed, 28 Jul 2021 23:14:17 utilities.py[line:160] INFO     Dump statistics to E:\workspace\classify\audioset_tagging_cnn-master\audioset_tagging_cnn-master\statistics_path\statistics_2021-07-28_23-13-28.pkl
+Wed, 28 Jul 2021 23:14:17 main.py[line:248] INFO iteration: 0, train time: 22.346 s, validate time: 26.516 s
+Wed, 28 Jul 2021 23:14:17 main.py[line:250] INFO ------------------------------------
+Wed, 28 Jul 2021 23:14:20 main.py[line:265] INFO Model saved to E:\workspace\classify\audioset_tagging_cnn-master\audioset_tagging_cnn-master\checkpoints\0_iterations.pth
