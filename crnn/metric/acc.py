@@ -10,6 +10,9 @@ class acc:
             pred = self.decode(preds[:,i])
             target_item = target[st:st + length[i]]
             st += length[i]
+            # # 删除一部分符号之后，可能target为空 的情况
+            # if len(target_item) == 0:
+            #     single_word_accuracy.append(0)
             jaccard = self.single_word_acc(pred, target_item)
             single_word_accuracy.append(jaccard)
         # print(preds[:,i], target_item)
