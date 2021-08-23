@@ -1,3 +1,6 @@
+更新到th1.9_cuda11.1后，没有那些cuda error了
+
+
 Dataset incident
 
 测试数据选 icdar15_incident
