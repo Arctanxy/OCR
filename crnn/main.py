@@ -7,8 +7,9 @@ parser.add_argument("--val_folder", type=str, default=r"F:\scripts\blurOCR\icdar
 parser.add_argument("--batch_size", type=int, default=32)
 parser.add_argument("--train_folder", type=str, default=r"C:\Users\Administrator\Downloads\mjsynth.tar\mjsynth\mnt\ramdisk\max\90kDICT32px")
 parser.add_argument("--fix_h", type=int, default=32)
-parser.add_argument("--hdf5_path", type=str, default="./res/data.hdf5")
+# parser.add_argument("--hdf5_path", type=str, default="./res/data.hdf5")
 parser.add_argument("--lmdb_path", type=str, default="./res/lmdb")
+parser.add_argument("--model_dir", type=str, default="./ckpt")
 args = parser.parse_args()
 
 

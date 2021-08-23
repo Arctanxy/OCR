@@ -162,10 +162,12 @@ class Data(Dataset):
             ratio = h / self.fix_h
             w_ = int(w / ratio)
             img = img.resize((w_, self.fix_h))
+            blur_img = self.blur(img, w_, self.fix_h)
             label = self.labels[index]
             label_id = self.to_id(label)
             meta = {"label":label, "label_id":label_id}
             img, meta = self.trans(img,meta)
+            blur_img, meta = self.trans(blur_img, meta)
         else:
             if not hasattr(self, "train_data"):
                 self.open_lmdb()
@@ -181,7 +183,7 @@ class Data(Dataset):
             img = torch.from_numpy(img) / 256.0
             label = np.frombuffer(label, np.int16)
             meta = {"label_id":label}
-        return img, meta
+        return img, blur_img, meta
 
     def to_id(self, label):
         indices = []
@@ -197,6 +199,13 @@ class Data(Dataset):
         img = ToTensor()(img)
         return img, meta
 
+    def blur(self, img, w, h):
+        if img.size[0] < 2:
+            return img
+        img = img.resize((img.size[0] // 2, img.size[1] // 2))
+        img = img.resize((w, h))
+        return img
+
     def __len__(self):
         # return self._length
         if self.data_type == "train":
@@ -206,7 +215,8 @@ class Data(Dataset):
 
 def collate_fn(batch):
     imgs = [item[0] for item in batch]
-    metas = [item[1] for item in batch]
+    blur_imgs = [item[1] for item in batch]
+    metas = [item[2] for item in batch]
     max_length = 0
     fix_c, fix_h = imgs[0].shape[:2]
     for img in imgs:
@@ -215,18 +225,20 @@ def collate_fn(batch):
             max_length = w
     label_ids = [item["label_id"] for item in metas]
     out_mat = torch.zeros((len(imgs), fix_c, fix_h, max_length))
+    out_blur_mat = torch.zeros((len(imgs), fix_c, fix_h, max_length))
     out_mask = torch.zeros((len(imgs), fix_c, fix_h, max_length))
     out_label = []
     out_length = []
     for i,img in enumerate(imgs):
         w = img.shape[-1]
         out_mat[i,:,:,:w] = img
+        out_blur_mat[i,:,:,:w] = blur_imgs[i]
         out_mask[i,:,:,:w] = 1
         out_label.extend(label_ids[i])
         out_length.append(len(label_ids[i]))
 
     meta = {"mask": out_mask, "label_id": torch.tensor(out_label),"length":torch.tensor(out_length)}
-    return out_mat, meta
+    return out_mat, out_blur_mat, meta
 
 def worker_init_fn(worker_id):
     worker_info = torch.utils.data.get_worker_info()
