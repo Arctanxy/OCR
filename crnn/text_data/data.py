@@ -136,26 +136,10 @@ class Data(Dataset):
         else:
             raise Exception("./res/alpha.txt not exist. ")
 
-        if os.path.exists(os.path.join(args.lmdb_path, "data.mdb")):
-            self.lmdb = True
-        #     # env = lmdb.open(args.lmdb_path, max_dbs=4, map_size=int(1e12), readonly=True)
-        #     self.env = lmdb.open("./res/lmdb", max_dbs=4, map_size=int(1e12), readonly=True)
-        #     self.train_data = self.env.open_db("train_data".encode())
-        #     self.train_label = self.env.open_db("train_label".encode())
-        #     # self.train_length = self.env.open_db("train_length".encode()) # 暂时不用
-        #     self.val_data = self.env.open_db("val_data".encode())
-        #     self.val_label = self.env.open_db("val_label".encode())
-        #     self.txn = self.env.begin()
-        #     self._length = self.txn.stat(db=self.train_data)["entries"] if self.data_type == "train" else \
-        #         self.txn.stat(db=self.val_data)[
-        #             "entries"]
-            # self.train_data = None
-            # self.train_label = None
-            # self.train_length = None # 暂时不用
-            # self.val_data = None
-            # self.val_label = None
-            # self.txn = None
-            # self._length = None
+        self.lmdb = False
+        # if os.path.exists(os.path.join(args.lmdb_path, "data.mdb")):
+        #     self.lmdb = True
+
 
     def open_lmdb(self):
         env = lmdb.open("./res/lmdb", max_dbs=4, map_size=int(1e12), readonly=True)
@@ -262,7 +246,7 @@ def worker_init_fn(worker_id):
 def get_train_loader(args):
     d = Data(args)
     dl = DataLoader(d, batch_size=args.batch_size, collate_fn=collate_fn, shuffle=True,
-                    num_workers=4) #, worker_init_fn=worker_init_fn, multiprocessing_context="spawn")
+                    num_workers=0) #, worker_init_fn=worker_init_fn, multiprocessing_context="spawn")
     return dl
 
 def get_val_loader(args):
