@@ -10,6 +10,8 @@ parser.add_argument("--fix_h", type=int, default=32)
 # parser.add_argument("--hdf5_path", type=str, default="./res/data.hdf5")
 parser.add_argument("--lmdb_path", type=str, default="./res/lmdb")
 parser.add_argument("--model_dir", type=str, default="./ckpt")
+parser.add_argument("--log_dir", type=str, default="./log")
+parser.add_argument("--task_name", type=str, default="task0")
 args = parser.parse_args()
 
 
